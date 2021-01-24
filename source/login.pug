@@ -6,19 +6,37 @@ block head
 block main
   .login
     .login__header
-      a.login_link(href='#') LOGO
+      a.login__link(href='#') Logo
     .login__content
-      h2.title.tile--bigger LOGIN
+      h2.title.title--bigger Login
       .login__block
-        form(action="")
+        form
           +input-text({
-            label: "Mail Address",
+            label: 'Mail address',
             id: 'email',
-            type: 'email'
+            type: 'email',
+            error: 'Data invalid',
+            required: true
           })
+          +input-text({
+            label: 'Password',
+            id: 'password',
+            type: 'password',
+            required: true
+          })
+          +checkbox({
+            label: 'Remember login',
+            id: 'remember-login',
+            position: 'center'
+          })
+          .btn-submit
+            +buttons({
+              text: 'Login',
+              type: 'submit'
+            })
         a.login__link.login__link--blue(href='') Forgot password
         a.login__link.login__link--red(href='') Create account
-    .login__block
+      .login__block
         p.title Login with other services
         -
           var services = [

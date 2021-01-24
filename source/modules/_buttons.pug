@@ -34,7 +34,9 @@ mixin buttons-link({ href, text, type, size, isFull, iconFont, iconImage })
     span.button__text
       | #{text}
 
-mixin buttons-image({ href, text, imageUrl })
-  a.button-image( href= href ? href : '#')
+mixin button-image({ href, text, imageUrl })
+  a.button-image(
+    href= href ? href : '#'
+  )
     img(src=imageUrl)
     span= text
